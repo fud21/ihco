@@ -73,8 +73,8 @@ else:
 with tab1:
     st.write("### 봉사 횟수 확인")
     c1, c2 = st.columns(2)
-    in_name = c1.text_input("이름", placeholder="예: 김채원")
-    in_birth = c2.text_input("생년월일 (YYYY-MM-DD)", placeholder="예: 2003-10-22")
+    in_name = c1.text_input("이름", placeholder="예: 김이코")
+    in_birth = c2.text_input("생년월일 (YYYY-MM-DD)", placeholder="예: 2000-01-01")
     
     if st.button("조회"):
         if in_name and in_birth:
@@ -122,4 +122,5 @@ with tab2:
                         st.success("저장 완료!")
                         st.balloons()
     else:
+
         st.info("비밀번호를 입력하세요.")
