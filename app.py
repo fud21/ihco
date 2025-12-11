@@ -9,10 +9,11 @@ from streamlit_gsheets import GSheetsConnection
 st.set_page_config(page_title="IHCO 시설관리실", page_icon="📅")
 
 try:
-    conn = st.connection("gsheets", type=GSheetsConnection)
+    conn = st.connection("gsheets", type=GSheetsConnection)
 except Exception as e:
-    st.error("설정 파일(secrets.toml) 오류입니다. 형식을 다시 확인해주세요.")
-    st.stop()
+    st.error("설정 파일(secrets.toml) 오류입니다. 형식을 다시 확인해주세요.")
+    st.stop()
+
 
 def load_data(sheet_name):
     try:
@@ -258,5 +259,6 @@ if is_admin:
                     }])
                     if save_to_gsheet("활동종료", new_row):
                         st.error(f"{t_name}님 활동 종료 처리 완료.")
+
 
 
