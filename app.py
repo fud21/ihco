@@ -145,11 +145,15 @@ with tab1:
                             penalty_date = row['패널티 일자']
                             penalty_count = row['무단결석 횟수'] if '무단결석 횟수' in row else ""
 
-                            st.warning(f"""
-                            * **무단결석 횟수:** {penalty_count}
-                            * **무단결석 일자:** {absent_date}
-                            * **패널티:** {penalty_date}  
-                            """)
+                            st.warning(
+                                f"""
+                            **무단결석 횟수:** {penalty_count}<br>
+                            **무단결석 일자:** {absent_date}<br>
+                            **패널티:** {penalty_date}<br>
+                            """,
+                                unsafe_allow_html=True
+                            )
+
 
                         with st.expander("🚨 무단결석 및 패널티 규정", expanded=False):
                             st.markdown("""
@@ -254,4 +258,5 @@ if is_admin:
                     }])
                     if save_to_gsheet("활동종료", new_row):
                         st.error(f"{t_name}님 활동 종료 처리 완료.")
+
 
