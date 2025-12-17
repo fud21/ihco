@@ -270,5 +270,4 @@ if is_admin:
                     if save_to_gsheet("활동종료", new_row):
                         st.error(f"{t_name}님 활동 종료 처리 완료.")
 
-```
 
